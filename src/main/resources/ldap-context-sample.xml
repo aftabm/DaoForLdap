@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+
+<properties>
+    <comment>LDAP context properties for easy-ldap</comment>
+
+	<!--  LDAP CONNECTION -->
+	<entry key="SERVER_NAME"><![CDATA[localhost]]></entry>
+	<entry key="SERVER_PORT"><![CDATA[10389]]></entry>
+	<entry key="INITIAL_CONTEXT_FACTORY_CLASS"><![CDATA[com.sun.jndi.ldap.LdapCtxFactory]]></entry>
+	<entry key="USE_LDAP_CONNECT_POOL"><![CDATA[true]]></entry>
+	
+	<!-- LDAP CONNECTION AUTH  -->        
+	<entry key="ADMIN_AUTHENTICATION_METHOD"><![CDATA[none]]></entry>
+	<entry key="ADMIN_PRINCIPAL"><![CDATA[uid=admin,dc=easy,dc=org]]></entry>
+	<entry key="ADMIN_CREDENTIALS"><![CDATA[admin]]></entry>
+	<entry key="ADMIN_PASSWORD_ENCRIPTION_METHOD"><![CDATA[none]]></entry>
+	<entry key="USER_AUTHENTICATION_METHOD"><![CDATA[simple]]></entry> 
+	<!--  none, simple -->
+	
+	<!-- LDAP STRUCTURE -->
+	<entry key="DOMAIN_DN"><![CDATA[dc=easy,dc=org]]></entry>
+	
+	<entry key="TNT_RDN_TYPE"><![CDATA[o]]></entry>
+	
+	<entry key="USERS_RDN_TYPE"><![CDATA[ou]]></entry>
+	<entry key="USERS_RDN_VALUE"><![CDATA[People]]></entry>
+	<entry key="USERS_RDN"><![CDATA[ou=People]]></entry>
+	
+	<entry key="USER_RDN_TYPE"><![CDATA[uid]]></entry>
+	
+	<entry key="ROLES_RDN_TYPE"><![CDATA[ou]]></entry>
+	<entry key="ROLES_RDN_VALLUE"><![CDATA[Roles]]></entry>
+	<entry key="ROLES_RDN"><![CDATA[ou=Roles]]></entry>
+	
+	<entry key="ROLE_RDN_TYPE"><![CDATA[cn]]></entry>
+	
+	<entry key="LOWEST_ROLE"><![CDATA[USER]]></entry>
+	<entry key="HIGHEST_ROLE"><![CDATA[ADMIN]]></entry>
+</properties>

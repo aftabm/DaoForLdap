@@ -1,0 +1,85 @@
+version: 1
+
+dn: dc=easy,dc=org
+objectClass: extensibleObject
+objectClass: domain
+objectClass: top
+dc: easy
+
+dn: uid=admin,dc=easy,dc=org
+objectClass: tlsKeyInfo
+objectClass: organizationalPerson
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: top
+cn: domain admin
+keyalgorithm: 
+privatekey:: 
+privatekeyformat: 
+publickey:: 
+publickeyformat: 
+sn: admin
+displayname: Domain superUser
+uid: admin
+usercertificate:: 
+userpassword:: YWRtaW4=
+
+dn: o=tnt1,dc=easy,dc=org
+objectClass: organization
+objectClass: top
+o: tnt1
+
+dn: ou=People,o=tnt1,dc=easy,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: People
+
+dn: uid=testadmin,ou=People,o=tnt1,dc=easy,dc=org
+objectClass: organizationalPerson
+objectClass: person
+objectClass: extensibleObject
+objectClass: inetOrgPerson
+objectClass: top
+cn: Test Admin
+sn: Admin
+givenname: Test
+mail: testadmin@easy.org
+ou: People
+uid: testadmin
+userpassword:: 
+
+dn: uid=testuser,ou=People,o=tnt1,dc=easy,dc=org
+objectClass: organizationalPerson
+objectClass: person
+objectClass: extensibleObject
+objectClass: inetOrgPerson
+objectClass: top
+cn: Test User
+sn: User
+givenname: Test
+mail: testuser@easy.org
+ou: People
+uid: testuser
+userpassword:: dGVzdHVzZXI=
+
+dn: ou=Roles,o=tnt1,dc=easy,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: Roles
+
+dn: cn=SUPER_USERS,ou=Roles,o=tnt1,dc=easy,dc=org
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: SUPER_USERS
+uniquemember: uid=testadmin,ou=People,o=tnt1,dc=easy,dc=org
+ou: Roles
+
+dn: cn=USERS,ou=Roles,o=tnt1,dc=easy,dc=org
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: USERS
+uniquemember: uid=testuser,ou=People,o=tnt1,dc=easy,dc=org
+uniquemember: uid=testadmin,ou=People,o=tnt1,dc=easy,dc=org
+uniquemember: cn=SUPER_USERS,ou=Roles,o=tnt1,dc=easy,dc=org
+uniquemember: uid=admin,dc=easy,dc=org
+ou: Roles
